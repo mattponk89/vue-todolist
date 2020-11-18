@@ -11,7 +11,10 @@
     </head>
     <body>
         <div id="root" class="container">
-          <div class="row d-flex justify-content-center">
+          <div class="row d-flex justify-content-center header">
+            <div class="col-12 logo d-flex justify-content-center">
+              <img src="img/logo.png" alt="">
+            </div>
             <div class="col-6">
               <input id="user_input" @keyup.enter="addItemList()" type="text" name="userInput" v-model="userInput" placeholder="Nuovo Todo">
             </div>
@@ -21,11 +24,11 @@
           </div>
           <div class="row d-flex justify-content-center">
             <ul class="col-9 text-decoration-none todo-list">
-              <li v-for="(el, index) in toDoList" @click="(ev) => ev.target.classList.toggle('active')" v-model="index" class='todo-item d-flex justify-content-between align-items-center'>
-                <div>
-                  {{el}}
+              <li v-for="(el, index) in toDoList" class='todo-item d-flex justify-content-between align-items-center'>
+                <div @click="toggleCheck(index)" :class="{active: el.isChecked}" class="d-flex align-items-center">
+                  {{el.textToDo}}
                 </div>
-                <i @click="removeItemList(index)" class="fa fa-times" aria-hidden="true"></i>
+                <i @click="removeItemList(index)" class="fa fa-times d-flex justify-content-center align-items-center" aria-hidden="true"></i>
               </li>
             </ul>
           </div>
