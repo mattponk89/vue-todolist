@@ -2,8 +2,7 @@ const appToDo = new Vue({
   el: '#root',
   data: {
     userInput: '',
-    toDoList: [],
-    toDoChecked: []
+    toDoList: []
   },
   methods: {
     addItemList: function(){
@@ -12,12 +11,5 @@ const appToDo = new Vue({
     },
     removeItemList: function(removeIndex){
       this.toDoList.splice(removeIndex, 1);
-    },
-    updateItem: function(updateIndex){
-      if(this.toDoChecked.includes(updateIndex)){
-
-      }
-      this.toDoChecked.push(updateIndex)
     }
-  }
 });
