@@ -1,6 +1,15 @@
 * {
     font-family: 'Lato';
 }
+body{
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+}
 #user_input{
   width: 100%;
   height: 30px;
@@ -39,4 +48,7 @@ li i {
   width: 28px;
   height: 28px;
   background-color: red;
+}
+.how-many{
+  text-align: center;
 }

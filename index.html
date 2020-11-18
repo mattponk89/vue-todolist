@@ -22,13 +22,16 @@
               <button id="btn_insert" @click="addItemList()" type="button" name="insertTodo">Aggiungi</button>
             </div>
           </div>
+          <h1 class="how-many">
+            COSE DA FARE: {{numTodo}} 
+          </h1>
           <div class="row d-flex justify-content-center">
             <ul class="col-9 text-decoration-none todo-list">
               <li v-for="(el, index) in toDoList" class='todo-item d-flex justify-content-between align-items-center'>
                 <div @click="toggleCheck(index)" :class="{active: el.isChecked}" class="d-flex align-items-center">
                   {{el.textToDo}}
                 </div>
-                <i @click="removeItemList(index)" class="fa fa-times d-flex justify-content-center align-items-center" aria-hidden="true"></i>
+                <i @click="removeItemList(el, index)" class="fa fa-times d-flex justify-content-center align-items-center" aria-hidden="true"></i>
               </li>
             </ul>
           </div>
